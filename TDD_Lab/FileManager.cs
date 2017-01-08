@@ -8,7 +8,7 @@ using System.IO;
 
 namespace TDD_Lab
 {
-    public class FileManager 
+    public class FileManager
     {
 
         IWriteToFile fileWriter;
@@ -22,7 +22,7 @@ namespace TDD_Lab
         {
             string fullName = "Name: " + name + " Last Name: " + lastName;
             fileWriter.SaveToFile(fullName);
-            return fullName;       
+            return fullName;
         }
 
         public void ReadFile()
@@ -33,7 +33,7 @@ namespace TDD_Lab
             {
                 Console.WriteLine(fileContainment[i]);
             }
-                   
+
         }
 
         public string WriteAdditionResultToFile(int number1, int number2)
@@ -59,44 +59,23 @@ namespace TDD_Lab
 
         public string WriteDivisionQuotaToFile(int number1, int number2)
         {
-            try
-            {
-                int quota = number1 / number2;
 
-                if (number1 < number2)
-                {
-                    fileWriter.SaveToFile("Only allowed to divide by a lesser number");
-                    return quota.ToString("Only allowed to divide by a lesser number");
-                }
-                if (number2 != 0)
-                {
-                    fileWriter.SaveToFile("Quota = " + quota.ToString());
-                    return quota.ToString();
-                }
-         
-            }
-            catch (DivideByZeroException e)
+            int quota = number1 / number2;
+
+            if (number1 < number2)
             {
-                Console.WriteLine(e.Message);
+                fileWriter.SaveToFile("Only allowed to divide by a lesser number");
+                return quota.ToString("Only allowed to divide by a lesser number");
+            }
+
+            if (number2 != 0)
+            {
+                fileWriter.SaveToFile("Quota = " + quota.ToString());
+                return quota.ToString();
             }
 
             return "";
         }
-
     }
 }
-//Programmet ska vara objektorienterat skrivet och följa TDD metodik
 
-//Programmet ska kunna:
-//Skapa en text fil
-//Skriva till textfilen baserat på input(s) till konsolen: 
-//Ditt förnamn och efternamn
-//En addition summa
-//En subtraktion differens
-//En multiplikations produkt
-//En divisions kvot
-//Läsa från textfilen
-//Undersöka ifall filen redan existerar
-//Skriv minst 3 klasser
-//Skriv minst 8 metoder för att hantera funktionaliteterna
-//Skriv minst 8 enhets tester

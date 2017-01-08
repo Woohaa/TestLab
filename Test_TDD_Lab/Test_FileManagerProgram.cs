@@ -7,7 +7,7 @@ using System.Linq;
 namespace Test_TDD_Lab
 {
 
-    //En mock, skapar en fake class
+    //Mock
     public class TestWriteToFile : IWriteToFile
     {
         public string Input = null;
