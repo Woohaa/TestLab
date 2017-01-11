@@ -90,13 +90,18 @@ namespace Test_TDD_Lab
         }
 
         [TestMethod]
-        [ExpectedException(typeof(DivideByZeroException))]
         public void Test_DivisibleByZero()
         {
             TestWriteToFile fileWriter = new TestWriteToFile();
             FileManager manager = new FileManager(fileWriter);
 
-            manager.WriteDivisionQuotaToFile(10, 0);
+			bool expected = false;
+
+			bool actual =  manager.WriteDivisionQuotaToFile(10, 0);
+			bool actual2 = manager.WriteDivisionQuotaToFile(0, 10);
+
+			Assert.AreEqual(expected, actual);
+			Assert.AreEqual(expected, actual2);
 
         }
 
@@ -105,12 +110,12 @@ namespace Test_TDD_Lab
         {
             WriteToFile fileWriter = new WriteToFile();
 
-            File.Delete(@"C:\Users\Admin\Desktop\Test.txt");
+            File.Delete(@"C:\Systemutvecklare Utbildning\Kurs Testning\Test.txt");
 
             fileWriter.SaveToFile("test");
             fileWriter.SaveToFile("test2");
 
-            string[] actual = File.ReadLines(@"C:\Users\Admin\Desktop\Test.txt").ToArray();
+            string[] actual = File.ReadLines(@"C:\Systemutvecklare Utbildning\Kurs Testning\Test.txt").ToArray();
 
             Assert.AreEqual("test", actual[0]);
             Assert.AreEqual("test2", actual[1]);

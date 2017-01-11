@@ -27,13 +27,19 @@ namespace TDD_Lab
 
         public void ReadFile()
         {
-            string[] fileContainment = File.ReadAllLines(@"C:\Users\Admin\Desktop\Test.txt");
+			if (File.Exists(@"C:\Systemutvecklare Utbildning\Kurs Testning\Test.txt"))
+			{
+				string[] fileContainment = File.ReadAllLines(@"C:\Systemutvecklare Utbildning\Kurs Testning\Test.txt");
 
-            for (int i = 0; i < fileContainment.Length; i++)
-            {
-                Console.WriteLine(fileContainment[i]);
-            }
-
+				for (int i = 0; i < fileContainment.Length; i++)
+				{
+					Console.WriteLine(fileContainment[i]);
+				}
+			}
+			else
+			{
+				Console.WriteLine("There is no file available!");
+			}
         }
 
         public string WriteAdditionResultToFile(int number1, int number2)
@@ -57,24 +63,30 @@ namespace TDD_Lab
             return product.ToString();
         }
 
-        public string WriteDivisionQuotaToFile(int number1, int number2)
+        public bool WriteDivisionQuotaToFile(int number1, int number2)
         {
+			try
+			{
+				int quota = number1 / number2;
 
-            int quota = number1 / number2;
+				if (number1 < number2)
+				{
+					fileWriter.SaveToFile("Only allowed to divide by a lesser number");
+					return false;
+				}
 
-            if (number1 < number2)
-            {
-                fileWriter.SaveToFile("Only allowed to divide by a lesser number");
-                return quota.ToString("Only allowed to divide by a lesser number");
-            }
-
-            if (number2 != 0)
-            {
-                fileWriter.SaveToFile("Quota = " + quota.ToString());
-                return quota.ToString();
-            }
-
-            return "";
+				if (number2 != 0)
+				{
+					fileWriter.SaveToFile("Quota = " + quota.ToString());
+					return true;
+				}
+			}
+			catch(DivideByZeroException e)
+			{
+				Console.WriteLine("ERROR!!! = " + e);
+				return false;
+			}
+			return false;
         }
     }
 }
