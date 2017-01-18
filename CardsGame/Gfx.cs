@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CardsGame
 {
-	class Gfx
+    public class Gfx
 	{
 		public void SuitsMenuGFX()
 		{

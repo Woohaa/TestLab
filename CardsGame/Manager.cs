@@ -143,9 +143,7 @@ namespace CardsGame
 		};
 
 		char[] suitIcons = new char[] { '♦', '♣', '♠', '♥' };
-		Suits suits;
-
-
+	
 
 		public Suits[] GetSuits()
 		{
@@ -206,26 +204,28 @@ namespace CardsGame
 
 			return Suits.INVALID;
 		}
-		//
-		public void ModuleTest(List<string> cardList, Suits[] suit)
-		{
-			foreach (var item in cardList)
-			{
-				foreach (var suitsValue in GetSuits())
-				{
-					if (cards.Any(c => c.Equals(item.ToString()) && suitsValue == Suits.Clubs || suitsValue == Suits.Diamonds || suitsValue == Suits.Hearts || suitsValue == Suits.Spades))
-					{
-						Console.WriteLine(item + " " + suitsValue + " " + "PASS");
-					}
-					else
-					{
-						Console.WriteLine();
-					}
 
-				}
+
+		//
+		//public void ModuleTest(List<string> cardList, Suits[] suit)
+		//{
+		//	foreach (var item in cardList)
+		//	{
+		//		foreach (var suitsValue in GetSuits())
+		//		{
+		//			if (cardList.Any(c => c.Equals(item.ToString()) && suitsValue == Suits.Clubs || suitsValue == Suits.Diamonds || suitsValue == Suits.Hearts || suitsValue == Suits.Spades))
+		//			{
+		//				Console.WriteLine(item + " " + suitsValue + " " + "PASS");
+		//			}
+		//			else
+		//			{
+		//				Console.WriteLine();
+		//			}
+
+		//		}
 			    	
-			  }
-		 }
+		//	  }
+		// }
 
 	}
 }

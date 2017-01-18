@@ -53,12 +53,6 @@
     <Compile Include="TDD_CardsGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CardsGame\CardsGame.csproj">
-      <Project>{80a08b6b-3a08-4011-b70b-7f276ca199b1}</Project>
-      <Name>CardsGame</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

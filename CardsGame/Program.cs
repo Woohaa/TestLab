@@ -4,32 +4,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
+
+
 namespace CardsGame
 {
-	class Program
+	public class Program
 	{
-		static void Main(string[] args)
-		{
+        
 
-			while (true)
-			{
-				Manager manager = new Manager();
-				Gfx gfx = new Gfx();
+        static void Main(string[] args)
+        {
+            
 
+            while (true)
+            {
 
-				//gfx.CardValueGFX();
-				//string input2 = Console.ReadLine();
-				//gfx.SuitsMenuGFX();
-				//string input1 = Console.ReadLine();
-				//Suits suits = manager.ChoseSuits(input1);
+                Gfx gfx = new Gfx();
 
-				manager.ModuleTest(manager.GetList(), manager.GetSuits());
+                
+                //gfx.CardValueGFX();
+                //string input2 = Console.ReadLine();
+                //gfx.SuitsMenuGFX();
+                //string input1 = Console.ReadLine();
+                //Suits suits = manager.ChoseSuits(input1);
 
-				//Console.WriteLine(manager.ChoseCard3(input2, suits));
+                //manager.ModuleTest(manager.GetList(), manager.GetSuits());
 
-				Console.ReadLine();
-			}
+                //Console.WriteLine(manager.ChoseCard3(input2, suits));
 
-		}
-	}
+                Console.ReadLine();
+            }
+
+        }
+    }
+
 }
