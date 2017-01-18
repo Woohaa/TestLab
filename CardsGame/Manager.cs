@@ -115,7 +115,7 @@ namespace CardsGame
 
 	public enum Suits
 	{
-		Hearts = 1,
+		Hearts,
 		Spades,
 		Diamonds,
 		Clubs,
@@ -142,7 +142,7 @@ namespace CardsGame
 			"K"
 		};
 
-		char[] suitIcons = new char[] { '♦', '♣', '♠', '♥' };
+		char[] suitIcons = new char[] { '♥', '♠', '♦', '♣', 'F'};
 	
 
 		public Suits[] GetSuits()
@@ -206,28 +206,7 @@ namespace CardsGame
 		}
 
 
-		//
-		//public void ModuleTest(List<string> cardList, Suits[] suit)
-		//{
-		//	foreach (var item in cardList)
-		//	{
-		//		foreach (var suitsValue in GetSuits())
-		//		{
-		//			if (cardList.Any(c => c.Equals(item.ToString()) && suitsValue == Suits.Clubs || suitsValue == Suits.Diamonds || suitsValue == Suits.Hearts || suitsValue == Suits.Spades))
-		//			{
-		//				Console.WriteLine(item + " " + suitsValue + " " + "PASS");
-		//			}
-		//			else
-		//			{
-		//				Console.WriteLine();
-		//			}
-
-		//		}
-			    	
-		//	  }
-		// }
-
-	}
+    }
 }
 
 

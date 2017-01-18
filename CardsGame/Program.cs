@@ -20,19 +20,19 @@ namespace CardsGame
 
             while (true)
             {
-
+                Manager manager = new Manager();
                 Gfx gfx = new Gfx();
+                Test_Modules testMod = new Test_Modules();
 
-                
-                //gfx.CardValueGFX();
-                //string input2 = Console.ReadLine();
-                //gfx.SuitsMenuGFX();
-                //string input1 = Console.ReadLine();
-                //Suits suits = manager.ChoseSuits(input1);
+                gfx.CardValueGFX();
+                string input2 = Console.ReadLine();
+                gfx.SuitsMenuGFX();
+                string input1 = Console.ReadLine();
+                Suits suits = manager.ChoseSuits(input1);
 
-                //manager.ModuleTest(manager.GetList(), manager.GetSuits());
+                //testMod.ModuleTest(manager.GetList(), manager.GetSuits());
 
-                //Console.WriteLine(manager.ChoseCard3(input2, suits));
+                Console.WriteLine(manager.ChoseCard3(input2, suits));
 
                 Console.ReadLine();
             }
