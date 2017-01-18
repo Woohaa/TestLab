@@ -19,13 +19,13 @@ namespace CardsGame
                 {
                     var expected = string.Format("{0} of {1}", card, suitsValue);
 
-                    if (expected == manager.ChoseCard3(card, suitsValue))
+                    if (expected == manager.ChoseCard(card, suitsValue))
                     {
-                        Console.WriteLine("PASS");
+                        Console.WriteLine(expected +  ": " + "PASS");
                     }
                     else
                     {
-                        Console.WriteLine("Fail");
+                        Console.WriteLine(expected + ": " + "FAIL");
                     }
 
                 }
@@ -34,5 +34,5 @@ namespace CardsGame
         }
     }
 }
-//Men i princip så ska du loopar igenom listorna,
+//Men i princip så loopar igenom listorna,
 //skicka in combo till dom metoderna som skriver ut och testa utskfriften

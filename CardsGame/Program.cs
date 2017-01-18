@@ -35,7 +35,7 @@ namespace CardsGame
 
             testMod.ModuleTest(manager.GetList(), manager.GetSuits());
 
-            //    Console.WriteLine(manager.ChoseCard3(input2, suits));
+            //    Console.WriteLine(manager.ChoseCard(input2, suits));
 
             //    Console.ReadLine();
             //}
