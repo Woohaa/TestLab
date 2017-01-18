@@ -77,7 +77,7 @@ namespace CardsGame
 		{
 
 			bool isRunning = true;
-
+     
 			while (isRunning)
 			{
 
