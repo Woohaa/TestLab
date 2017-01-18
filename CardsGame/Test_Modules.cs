@@ -13,17 +13,19 @@ namespace CardsGame
 
         public void ModuleTest(List<string> cardList, Suits[] suit)
         {
-            foreach (var item in cardList)
+            foreach (var card in cardList)
             {
                 foreach (var suitsValue in manager.GetSuits())
                 {
-                    if (cardList.Any(c => c.Equals(item.ToString()) && suitsValue == Suits.Clubs || suitsValue == Suits.Diamonds || suitsValue == Suits.Hearts || suitsValue == Suits.Spades))
+                    var expected = string.Format("{0} of {1}", card, suitsValue);
+
+                    if (expected == manager.ChoseCard3(card, suitsValue))
                     {
-                        Console.WriteLine(item + " " + suitsValue + " " + "PASS");
+                        Console.WriteLine("PASS");
                     }
                     else
                     {
-                        Console.WriteLine();
+                        Console.WriteLine("Fail");
                     }
 
                 }
@@ -32,3 +34,5 @@ namespace CardsGame
         }
     }
 }
+//Men i princip så ska du loopar igenom listorna,
+//skicka in combo till dom metoderna som skriver ut och testa utskfriften

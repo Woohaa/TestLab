@@ -143,9 +143,9 @@ namespace CardsGame
 		};
 
 		char[] suitIcons = new char[] { '♥', '♠', '♦', '♣', 'F'};
-	
+        string[] testCases = new string[52];
 
-		public Suits[] GetSuits()
+        public Suits[] GetSuits()
 		{
 			Suits[] suitsValues = (Suits[])Enum.GetValues(typeof(Suits));
 			return suitsValues;
@@ -164,8 +164,11 @@ namespace CardsGame
 			{
 				foreach (var card in cards.Where(c => c.Equals(input.ToUpper())))
 				{
-					string result = string.Format("{0} of {1}  {2}", card, suits, suitIcons[(int)suits]);
-					return result;
+                    {
+
+                        string result = string.Format("{0} of {1}", card, suits);
+                        return result;
+                    }
 				}
 			}
 
@@ -206,8 +209,31 @@ namespace CardsGame
 		}
 
 
+        #region Try Something
+        //public string[] SetCombosToArray(List<string> cardList, Suits[] suit)
+        //{
+        //    int i = 0;
+
+
+        //    foreach (var card in cardList)
+        //    {
+        //        foreach (var suitsValue in suit)
+        //        {
+        //            if (cardList.Any(c => c.Equals(card.ToString()) && suitsValue == Suits.Clubs || suitsValue == Suits.Diamonds || suitsValue == Suits.Hearts || suitsValue == Suits.Spades))
+        //            {
+        //                string result = card + ":" + suitsValue;
+
+        //                testCases[i] = result;
+        //                i++;
+        //            }
+        //        }
+        //    }
+
+        //    return testCases;
+        //}
+        #endregion
+
+
     }
 }
 
-
-		
